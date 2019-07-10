@@ -41,11 +41,14 @@ namespace SQLTableDependency
             {
                 dep.OnChanged += Changed;
                 dep.Start();
+                string x = Console.ReadLine();
 
                 Console.WriteLine("Press a key to exit");
                 Console.ReadKey();
-
-                dep.Stop();
+                if (x == "c")
+                {
+                    dep.Stop();
+                }
             }
         }
 
@@ -57,6 +60,7 @@ namespace SQLTableDependency
             Console.WriteLine("ID: " + changedEntity.Id);
             Console.WriteLine("Name: " + changedEntity.Name);
             Console.WriteLine("Surname: " + changedEntity.Surname);
+            Console.WriteLine("DateTime: " + DateTime.Now);
         }
     }
 }
